@@ -7,6 +7,13 @@ filetype off    " Required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+Plugin 'fatih/vim-go'
+
+let g:vim_markdown_folding_disabled = 1
+
 Bundle 'gmarik/vundle'
 
 filetype plugin indent on " Required
@@ -31,7 +38,7 @@ nmap <silent> <C-H> <C-W>h
 
 set path=.,/usr/include,,**
 set wildmenu
-"set mouse=a
+set mouse=a
 
 set number
 syntax enable
@@ -39,8 +46,8 @@ set background=dark
 let g:solarized_termcolors = 256
 colorscheme solarized
 
-" Highlight column 100 (color set here because most themes don't specify it)
-set colorcolumn=100
+" Highlight column 120 (color set here because most themes don't specify it)
+set colorcolumn=120
 hi ColorColumn ctermbg=grey guibg=#404040
 imap jj <Esc>
 highlight ExtraWhitespace ctermbg=red guibg=red
