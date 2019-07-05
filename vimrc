@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 
 Plugin 'fatih/vim-go'
 
@@ -16,6 +16,7 @@ let g:vim_markdown_folding_disabled = 1
 
 Bundle 'gmarik/vundle'
 
+filetype plugin on
 filetype plugin indent on " Required
 
 Bundle 'altercation/vim-colors-solarized'
