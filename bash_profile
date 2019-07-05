@@ -26,3 +26,29 @@ export FZF_DEFAULT_OPTS='
   --color=bg+:#073642,bg:#002b36,spinner:#719e07,hl:#586e75
   --color=fg:#839496,header:#586e75,info:#cb4b16,pointer:#719e07
   --color=marker:#719e07,fg+:#839496,prompt:#719e07,hl+:#719e07
+'
+export CROWDIN_QONTO_MESSENGER_API_KEY=bea1bbb31f0fcf56232ef1b200e0d352
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export AWS_SECRET_ACCESS_KEY=foo
+export AWS_ACCESS_KEY_ID=bar
+
+# open psql through kubectl
+kubepsql () {
+    pod=$(kubectl -n $1 get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | grep $2-$1 | head -n 1)
+    kubectl -n $1 exec -it $pod -- sh -c 'psql postgres://$DB_USERNAME:$DB_PASSWORD@$DB_HOST/$DB_NAME'
+}
+
+# open console through kubectl
+kubeconsole () {
+    pod=$(kubectl -n $1 get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | grep $2-$1 | head -n 1)
+    kubectl -n $1 exec -it $pod rails c
+}
+
+# open bash through kubectl
+kubebash () {
+    pod=$(kubectl -n $1 get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | grep $2-$1 | head -n 1)
+    kubectl -n $1 exec -it $pod /bin/bash
+}
+
+eval $(docker-machine env qonto)
