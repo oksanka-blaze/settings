@@ -1,0 +1,9 @@
+[user]
+  name = Oksana Dushenkivska
+  email = 
+[alias]
+  st = status
+  co = checkout
+[core]
+  editor = vim
+  excludesfile = /home/oksana/.gitignore

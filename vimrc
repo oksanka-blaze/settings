@@ -2,34 +2,31 @@ set nocompatible
 set laststatus=2
 set backspace=indent,eol,start
 set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
+set number
+set mouse=a
+imap jj <Esc>
+
 filetype off    " Required
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-
-Plugin 'godlygeek/tabular'
-Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
-
-Plugin 'fatih/vim-go'
-
-let g:vim_markdown_folding_disabled = 1
-
-Bundle 'gmarik/vundle'
 
 filetype plugin on
 filetype plugin indent on " Required
 
-Bundle 'altercation/vim-colors-solarized'
+" Tabularize - Install
+" git clone https://github.com/godlygeek/tabular.git ~/.vim/pack/plugins/start/tabular
+" Tabulerize - Use
+" :Tabularize /<pattern>
+" e.g.: :<, >Tabularize /= to tabularize on '=' tokens
 
-set rtp+=/usr/local/opt/fzf
+" FZF - Install
+" git clone https://github.com/junegunn/fzf.git ~/.vim/pack/packages/start/fzf
+" git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/packages/start/fzf.vim
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'below split',
   \ 'ctrl-v': 'below vsplit' }
 
-nnoremap <silent> <C-n> :FZF<CR>
-
+" Avoids C-* messing with FZF when it's active
 nmap <silent> <C-J> <C-W>j
 nmap <silent> <C-K> <C-W>k
 nmap <silent> <C-L> <C-W>l
@@ -37,19 +34,11 @@ nmap <silent> <C-H> <C-W>h
 "nmap <silent> <C-H> <C-W>h<c-W>_
 "nmap <silent> <C-L> <C-W>l<c-W>_
 
-set path=.,/usr/include,,**
-set wildmenu
-set mouse=a
 
-set number
-syntax enable
-set background=dark
-let g:solarized_termcolors = 256
-colorscheme solarized
+nnoremap <silent> <C-n> :FZF<CR>
 
 " Highlight column 120 (color set here because most themes don't specify it)
 set colorcolumn=120
 hi ColorColumn ctermbg=grey guibg=#404040
-imap jj <Esc>
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/

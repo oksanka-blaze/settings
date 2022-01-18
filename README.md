@@ -7,28 +7,20 @@ $ /usr/local/opt/fzf/install
 
 **Vim:**
 
-[Vundle](https://github.com/VundleVim/Vundle.vim) :
+`cp vimrc ~/.vimrc`
 
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+[Tabularize](https://github.com/godlygeek/tabular.git)
+```
+cd ~
+git clone https://github.com/godlygeek/tabular.git ~/.vim/pack/plugins/start/tabular
+```
 
-[Solarized colors for vim](https://github.com/altercation/vim-colors-solarized) :
-
- $ cd ~/.vim/bundle
- 
- $ git clone git://github.com/altercation/vim-colors-solarized.git
-
-
-**Markdown:**
-
-https://github.com/suan/vim-instant-markdown
-
-$ brew install node
-
-$ npm -g install instant-markdown-d
-
-add `Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}` to Vim
-
-`:PluginInstall` from Vim
+[FZF](https://github.com/junegunn/fzf.git)
+```
+cd ~
+git clone https://github.com/junegunn/fzf.git ~/.vim/pack/packages/start/fzf
+git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/packages/start/fzf.vim
+```
 
 **iTerm2:**
 
