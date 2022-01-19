@@ -42,3 +42,8 @@ set colorcolumn=120
 hi ColorColumn ctermbg=grey guibg=#404040
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+" Use the + buffer (system clipboard) by default when yanking
+" verify that +xterm_clipboard is active with `vim --version`
+" if not, use `sudo apt-get installl vim-gui-common` on Ubuntu
+set clipboard=unnamedplus
